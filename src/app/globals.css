@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #0A0A0A;
+  --color-fg: #FFFFFF;
+  --color-fg-muted: rgba(255, 255, 255, 0.4);
+  --color-fg-subtle: rgba(255, 255, 255, 0.2);
+  --color-fg-faint: rgba(255, 255, 255, 0.12);
+  --color-fg-ghost: rgba(255, 255, 255, 0.06);
+  --color-fg-whisper: rgba(255, 255, 255, 0.04);
+
+  --color-magenta: #E22872;
+  --color-sky-blue: #88C8EC;
+  --color-mango: #F2BE28;
+  --color-orange: #F07030;
+  --color-teal: #48B89A;
+  --color-emerald: #18924A;
+  --color-crimson: #CC1E30;
+  --color-plum: #3C2068;
+  --color-amber: #E09028;
+  --color-mauve: #7A5882;
+  --color-pink: #F2A5C0;
+
+  --color-card: rgba(255, 255, 255, 0.02);
+  --color-card-border: rgba(255, 255, 255, 0.05);
+  --color-card-border-hover: rgba(255, 255, 255, 0.12);
+  --color-section-border: rgba(255, 255, 255, 0.04);
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Ticker animation */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Scroll hint pulse */
+@keyframes scroll-pulse {
+  0% { top: -28px; }
+  50% { top: 28px; }
+  100% { top: -28px; }
+}
