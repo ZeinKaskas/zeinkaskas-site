@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavigationProps {
   alwaysVisible?: boolean;
@@ -35,12 +36,15 @@ export default function Navigation({ alwaysVisible = false }: NavigationProps) {
             transition={{ duration: 0.3 }}
             className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-10 h-[54px] bg-[rgba(10,10,10,0.88)] backdrop-blur-[20px] border-b border-[rgba(255,255,255,0.06)]"
           >
-            <Link
-              href="/"
-              className="font-extrabold text-xl tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              ZK
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logos/zk-logo.png"
+                alt="ZK"
+                width={32}
+                height={32}
+                style={{ width: 32, height: "auto" }}
+                unoptimized
+              />
             </Link>
 
             {/* Desktop links */}
@@ -67,7 +71,7 @@ export default function Navigation({ alwaysVisible = false }: NavigationProps) {
 
             <div className="flex items-center gap-3.5">
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-block bg-white text-[#0A0A0A] px-[22px] py-[10px] rounded-lg text-[13px] font-semibold hover:opacity-90 transition-opacity"
               >
                 Book a Call
@@ -125,7 +129,7 @@ export default function Navigation({ alwaysVisible = false }: NavigationProps) {
               About
             </Link>
             <Link
-              href="/contact"
+              href="/book"
               onClick={() => setMobileOpen(false)}
               className="bg-white text-[#0A0A0A] px-8 py-3 rounded-lg text-lg font-semibold"
             >

@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import YouTubeEmbed from "./YouTubeEmbed";
 
 const PixelRain = dynamic(() => import("./PixelRain"), { ssr: false });
 
@@ -32,27 +33,15 @@ export default function Hero() {
         AI consulting, production, and training for brands.
       </p>
 
-      {/* VSL Placeholder */}
-      <div className="relative z-10 w-full max-w-[760px] aspect-video bg-[#111] rounded-[14px] border border-[rgba(255,255,255,0.06)] flex items-center justify-center cursor-pointer hover:border-[rgba(255,255,255,0.15)] transition-[border-color] duration-300 group">
-        <div className="w-16 h-16 rounded-full bg-[rgba(255,255,255,0.08)] backdrop-blur-[10px] border border-[rgba(255,255,255,0.1)] flex items-center justify-center group-hover:bg-[rgba(255,255,255,0.14)] transition-colors">
-          <div
-            className="w-0 h-0 ml-1"
-            style={{
-              borderLeft: "18px solid rgba(255,255,255,0.7)",
-              borderTop: "11px solid transparent",
-              borderBottom: "11px solid transparent",
-            }}
-          />
-        </div>
-        <span className="absolute bottom-3 right-4 text-xs text-[rgba(255,255,255,0.2)]">
-          2:10
-        </span>
+      {/* VSL */}
+      <div className="relative z-10 w-full max-w-[760px]">
+        <YouTubeEmbed videoId="HaAv2k9wG-g" title="Zein Kaskas — VSL" />
       </div>
 
       {/* CTA */}
       <div className="relative z-10 mt-8">
         <a
-          href="#contact"
+          href="/book"
           className="inline-block bg-white text-[#0A0A0A] px-[22px] py-[10px] rounded-lg text-[13px] font-semibold hover:opacity-90 transition-opacity"
         >
           Book a 15-Minute Call

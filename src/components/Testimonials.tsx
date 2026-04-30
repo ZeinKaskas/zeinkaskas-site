@@ -6,22 +6,17 @@ const testimonials = [
   {
     name: "Itay Schiff",
     role: "Founder, Weavy",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/itay-schiff-598238112/",
   },
   {
     name: "Rowan Brooks",
     role: "Hawke Media",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Rashi Shah",
-    role: "Co-founder, PLAAY",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/rowanbrooks/",
   },
   {
     name: "Sahar Karoubi",
     role: "Founder, Bambuyu",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/sahar-karoubi/",
   },
 ];
 

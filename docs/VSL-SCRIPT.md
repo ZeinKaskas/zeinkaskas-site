@@ -1,81 +1,85 @@
-# ZEIN KASKAS - VSL SCRIPT
-## 2-3 min core | 3-5 min extended | Direct to camera, light script
-**Date:** 2026-03-20 | **Status:** DRAFT v1
+# ZEIN KASKAS - VSL SCRIPT v2
+## Built from transcript recordings (Apr 2-4, 2026)
+## 2:30 core | 4:00 extended | Direct to camera, your actual words
+**Date:** 2026-04-04 | **Status:** DRAFT v2 - Transcript-based
 
 ---
 
 ## PRODUCTION NOTES
 
-- Direct to camera, confident, casual. Bullet points on second screen, not teleprompter.
-- No corporate energy. Talk like you're explaining this to a smart friend over coffee.
-- No music during hook (first 10 seconds). Music fades in softly after.
-- Music at 10-15% of voice level. Never competing with voice.
-- Captions/text overlay on ALL key lines. Must work on mute.
-- Good lighting + good audio. Natural light, lapel mic.
-- Screen demos are intercut, not long static screenshares.
-- No logo intro. No animated opener. Just you, talking.
+- This script is built from things you actually said on camera. It should feel like you, because it is you.
+- Direct to camera, no teleprompter. Bullet points on second screen.
+- No corporate energy. No music during the hook. Music fades in at 10-15% after.
+- Captions on every key line. Must work on mute.
+- Natural light, lapel mic. No logo intro, no animated opener.
+- Screen demos are intercut, 2-3 second flashes. Never a long screenshare.
 
 ---
 
-## THE SCRIPT - CORE CUT (~2:10)
+## THE SCRIPT - CORE CUT (~2:30)
 
 ---
 
-### HOOK [0:00 - 0:15]
-*[Zein direct to camera. No B-roll. No music. Just him.]*
+### HOOK [0:00 - 0:12]
+*[Zein direct to camera. No B-roll. No music.]*
 
-"We produced a cinematic video for a hospital in 5 days. 8K resolution, ultra-wide, 3 minutes long. Traditional production would have taken months."
+"I'm a filmmaker and photographer turned AI director. I'm not a tech bro selling you AI tools. I'm a creative that happens to understand the technology deeply, and I use it as a tool, not as a replacement."
 
 *[BEAT]*
 
-"That's what happens when you stop using AI as a tool and start building it into a system."
+---
+
+### THE REALITY [0:12 - 0:40]
+*[Still direct to camera. Confident, grounded.]*
+
+"A lot of people think AI is about replacing creatives. It's not. It's about amplifying what they can do."
+
+"But here's what I see every week. Brands are either doing nothing with AI, or they're experimenting without direction. Using random tools, getting mediocre results, and thinking that's what AI can do."
+
+*[Slight lean in]*
+
+"It's not. With the right system and the right creative direction, AI becomes the most powerful creative tool available."
 
 ---
 
-### THE PROBLEM [0:15 - 0:45]
-*[B-roll fades in: teams clicking between tabs, manual workflows, stock AI tool interfaces. Back to Zein.]*
+### WHAT I DO [0:40 - 1:20]
+*[Intercut: Burjeel 8K clips, PLAAY product renders, workflow interfaces, Bambuyu ad visuals. Quick cuts, 2-3 sec each.]*
 
-"Here's what I see every week. Companies know AI is changing everything. But they're stuck between two bad options."
+"I build AI production systems for brands. Not one-off deliverables. Systems."
 
-*[Zein, direct]*
-
-"Option one: your team experiments with AI tools one by one. Looks cool, goes nowhere. No pipeline, no consistency, nothing connects."
-
-"Option two: you hire an agency that slaps AI on their pitch deck but runs the same slow process underneath."
-
-*[Leaning in slightly]*
-
-"Meanwhile, every month you wait, your competitors are producing more content for less money in less time. And that gap compounds."
-
----
-
-### WHAT I DO [0:45 - 1:25]
-*[Screen demos intercut: Burjeel 8K video clips, PLAAY product renders, workflow interface, brief-to-content pipeline. Quick cuts, 2-3 seconds each.]*
-
-"I build AI production systems for brands."
-
-"Not one-off deliverables. Systems. Pipelines that your team runs after I'm gone."
+"I come in, I look at what you're doing, I find where AI actually makes sense, and I build you a system around it."
 
 *[Back to camera]*
 
-"That looks different for every client. Sometimes it's a full content pipeline that turns a brief into finished assets automatically. Sometimes it's training your team to use tools they didn't know existed. Sometimes it's producing an entire campaign in a week that would normally take a quarter."
+"Sometimes that's a full content pipeline that turns a brief into finished assets. Sometimes it's a product render system that replaced traditional photography entirely. Sometimes it's training so your team can use what's already out there more effectively."
 
-*[Screen flash: workflow diagram or pipeline visual]*
-
-"Consulting. Production. Automation. Training. Whatever gets your team from where they are to where they need to be."
+"I've produced 8K cinematic video using AI pipelines. I've built ad generation engines that produce hundreds of on-brand variations in hours. And the thing I'm most proud of is that every single one of those clients can now run those systems without me."
 
 ---
 
-### CTA [1:25 - 2:00]
-*[Zein to camera. Calm, direct energy. Not salesy.]*
+### THE DIFFERENCE [1:20 - 1:50]
+*[Direct to camera. This is the anchor of the whole piece.]*
 
-"If any of that is relevant to what you're dealing with, I do 15-minute calls."
+"The brands that succeed with AI are the ones that have someone driving it who understands both the creative and the technical side. You can't just hand your marketing team a bunch of AI tools and say go figure it out."
 
-"No pitch. No deck. I'll just tell you where AI fits in your workflow and what it would actually take to get there."
+"You need someone who can see the creative vision, understand the technical capabilities, and bridge that gap. That's what I do. I speak both languages."
 
-*[Text overlay: Calendly link or "Book below"]*
+*[BEAT]*
 
-*[Direct eye contact]*
+"If you use AI to cut costs, you're also going to reduce quality. You need someone who understands taste behind that tool. Who has creativity. That's why my tagline is: taste can't be automated, but everything else can."
+
+---
+
+### CTA [1:50 - 2:20]
+*[Calm, direct. Not selling.]*
+
+"My approach is straightforward. I audit what you have, build what you need, train your team, and hand it over. After that, you don't need me. That's the point."
+
+"If you're a brand, an agency, or a startup, and you want to figure out where AI actually fits in what you do, book 15 minutes with me."
+
+"I'll tell you straight up what makes sense, what doesn't, and what the next step looks like. No pitch. Just honest advice from someone who does this every day."
+
+*[Text overlay: Calendly link]*
 
 "Link's right below this video."
 
@@ -83,215 +87,142 @@
 
 ---
 
-## EXTENDED CUT ADDITIONS (~3:30 total)
+## EXTENDED CUT (~4:00)
 
-The extended cut uses the same Hook and Problem sections, then adds interview clips before What I Do, and expands the proof section.
-
----
-
-### PROOF - INTERVIEW CLIPS [inserted at 0:45, before What I Do]
-
-*[Each clip: 20-30 seconds, well-lit, good audio. Interviewee name + title on screen.]*
-
-**CLIP 1: Itay Schiff - Weavy Founder** (~25s)
-*[On what separates real AI practitioners from tool users]*
-> Interviewer prompt: "What's the difference between someone who understands AI systems and someone who just uses AI tools?"
-
-**CLIP 2: Rashi Shah - PLAAY (Client)** (~25s)
-*[On the experience and results]*
-> Interviewer prompt: "What was it like working with Zein? What results did you see?"
-
-**CLIP 3: Sahar Karoubi - Bambuyu (Client)** (~20s)
-*[On specific outcomes]*
-> Interviewer prompt: "What would you say to someone considering working with Zein?"
-
-**CLIP 4: Rowan Brooks** (~20s)
-*[On what makes Zein different]*
-> Interviewer prompt: "What do you think Zein does differently in this space?"
-
-*[Back to Zein after clips]*
+Same Hook, then adds the Sahar interview clip and expanded proof before the CTA.
 
 ---
 
-### EXPANDED WHAT I DO [replaces the shorter version]
-
-*[Same screen demos but with more breathing room]*
-
-"I build AI production systems for brands."
-
-"Not one-off deliverables. Systems."
-
-*[Screen: Burjeel pipeline walkthrough, 5 seconds]*
-
-"That 8K hospital video? We built a pipeline. Script goes in, storyboard comes out automatically, video generates in batch, upscales to 8K, ready to edit. 60% of the generation was automated."
-
-*[Screen: PLAAY product renders, 3 seconds]*
-
-"For a chocolate brand, we built an AI render system that replaced traditional product photography. 70 images over four months."
-
-*[Screen: workflow interface, 3 seconds]*
-
-"For a fashion conglomerate with 20 brands, we built workflows that turn basic product photos into editorial-quality visuals. One build, they run it forever."
-
-*[Back to camera]*
-
-"Every project is different. But the approach is the same. Audit what you have, build what you need, train your team, hand it over."
-
-"After that, you don't need me. That's the point."
+### HOOK [0:00 - 0:12]
+*[Same as core]*
 
 ---
 
-### SAME CTA [as core cut]
+### THE REALITY [0:12 - 0:40]
+*[Same as core]*
+
+---
+
+### WHAT I DO [0:40 - 1:20]
+*[Same as core]*
+
+---
+
+### CLIENT PROOF - SAHAR KAROUBI, BAMBUYU [1:20 - 2:10]
+*[Cut to Sahar. Name + title on screen: "Sahar Karoubi, Co-Founder, Bambuyu"]*
+
+**CLIP 1** (~15s): *On what changed*
+> "Where you guys have come in really strong is our e-commerce content and photography content. It just expedited the process of getting our marketing assets, e-commerce assets, internal briefing, retail briefing visuals sorted."
+
+**CLIP 2** (~12s): *On something that was previously impossible*
+> "The final product sample wasn't ready. Something that maybe a couple years ago was unimaginable. We're able to provide the right information and once we have the final version available, the customer sees the same thing on shelf as they would online."
+
+**CLIP 3** (~10s): *On transparency*
+> "What I love about working with you is that before even diving into something, you're able to tell me, let's not attempt that. That's not going to come out looking like the outcome you're looking for. I love that transparency. It saves us so much time."
+
+**CLIP 4** (~15s): *On what sets Zein apart*
+> "I know AI tools are available to people. It's available to me. But as a founder, I want to focus on what I can do best. The combination of your manpower and expertise combined with the tools that you use is what sets you apart."
+
+*[Back to Zein]*
+
+---
+
+### THE DIFFERENCE (EXPANDED) [2:10 - 2:50]
+
+"I don't oversell. I tell you when something won't work. I tell you when you should shoot it for real instead. And that transparency is what keeps people coming back."
+
+"The biggest mistake I see is brands trying to use AI for everything. Don't. Use it where it gives you an unfair advantage."
+
+"For some brands, that's product photography. They can generate hundreds of lifestyle shots without booking a single studio day. For others, it's video. Content that would have cost 50K in production for a fraction of that. For others, it's just workflow automation. Taking manual processes and making them instant."
+
+"But none of that works without taste. None of that works without someone who knows what good looks like. AI can execute, but it can't direct. It can't make the call between 'this feels right' and 'this feels off.' That's still human. That's still the creative."
+
+---
+
+### CTA [2:50 - 3:30]
+
+"I don't sell you a subscription and disappear. I build it, I train your team, and I hand it over. You own it."
+
+"If any of that is relevant to what you're dealing with, book 15 minutes. I'll tell you where AI fits in your workflow and what it would actually take to get there."
+
+"No pitch. Just clarity."
+
+*[Text overlay: Calendly link]*
+
+"Link's below."
+
+*[END OF EXTENDED CUT]*
+
+---
+
+## KEY QUOTES FROM RECORDINGS (for captions/overlays)
+
+These are the strongest lines from Zein's recordings. Use as text overlays during the VSL:
+
+1. "I'm a filmmaker and photographer turned AI director."
+2. "I'm not a tech bro selling you AI tools."
+3. "Taste can't be automated, but everything else can."
+4. "If you use AI to cut costs, you're also going to reduce quality."
+5. "I build it, train your team, and hand it over. You don't need me forever."
+6. "Every single one of those clients can now run those systems without me."
+7. "AI can execute. But it can't direct."
+8. "I speak both languages."
+9. "No pitch. Just clarity."
+
+---
+
+## SAHAR QUOTES (for standalone social clips)
+
+1. "Something that maybe a couple years ago was unimaginable."
+2. "The combination of your manpower and expertise combined with the tools is what sets you apart."
+3. "As a founder, I want to focus on what I can do best."
+4. "By the second iteration, we're about 95% there."
+5. "I love that transparency. It saves us so much time."
 
 ---
 
 ## STRUCTURE BREAKDOWN
 
-### Core Cut (2:00-2:10)
+### Core Cut (2:20-2:30)
 
-| Section | Time | Words | Purpose | Visual |
-|---------|------|-------|---------|--------|
-| Hook | 0:00-0:15 | ~40 | "8K in 5 days" + "system not tool" | Zein only, no B-roll |
-| Problem | 0:15-0:45 | ~80 | Two bad options + cost of waiting | B-roll: manual workflows |
-| What I Do | 0:45-1:25 | ~90 | Systems, not deliverables. Screen demos. | Heavy intercut demos |
-| CTA | 1:25-2:00 | ~40 | 15 min, no pitch, link below | Zein + Calendly overlay |
+| Section | Time | Source | Purpose |
+|---------|------|--------|---------|
+| Hook | 0:00-0:12 | Vid 3 | Identity statement. Not a tech bro. |
+| The Reality | 0:12-0:40 | Vid 6 + Vid 5 | AI amplifies, doesn't replace. Most brands are lost. |
+| What I Do | 0:40-1:20 | Vid 5 + Vid 3 | Systems, case studies, proof of results. |
+| The Difference | 1:20-1:50 | Vid 6 + Vid 3 | Taste, creative direction, bridging both sides. |
+| CTA | 1:50-2:20 | Vid 5 + Vid 3 | Audit > build > train > hand over. Book 15 min. |
 
-### Extended Cut (3:20-3:40)
+### Extended Cut (3:30-4:00)
 
-| Section | Time | Words | Purpose | Visual |
-|---------|------|-------|---------|--------|
-| Hook | 0:00-0:15 | ~40 | Same as core | Zein only |
-| Problem | 0:15-0:45 | ~80 | Same as core | B-roll |
-| Proof (interviews) | 0:45-1:30 | ~0 (clips) | Social proof from real people | 4 interview clips |
-| What I Do (expanded) | 1:30-2:50 | ~140 | Case studies with screen demos | Heavy intercut |
-| CTA | 2:50-3:20 | ~40 | Same as core | Zein + Calendly |
-
----
-
-## THE VIEWER'S INTERNAL JOURNEY
-
-### Core Cut:
-```
-0:00  "8K in 5 days? Ok, I'm listening."
-        |
-0:08  "System, not a tool. That's a different angle."
-        |
-0:20  "Yeah, option one is literally what my team is doing right now."
-        |
-0:30  "Option two... that's exactly what our last agency did."
-        |
-0:40  "He's right. We're falling behind while we figure this out."
-        |
-0:50  "Systems. Pipelines. Not just another deliverable."
-        |
-1:00  [sees Burjeel video, PLAAY renders] "This is real work, not mockups."
-        |
-1:15  "Consulting, production, automation, training. He covers all of it."
-        |
-1:30  "15 minutes. No pitch. That's low commitment."
-        |
-1:40  "Link's below. I'll book it."
-```
-
-### Extended Cut adds:
-```
-0:45  "The Weavy founder? This guy knows the people building the tools."
-        |
-0:55  "That client actually sounds happy. And the results are specific."
-        |
-1:10  "Two clients saying the same thing. This isn't cherry-picked."
-        |
-1:20  "And someone in the industry vouching for him. Ok, he's legit."
-        |
-1:35  "60% automated. That's not hype, he showed the actual pipeline."
-        |
-1:50  "70 images over 4 months for a chocolate brand. Real numbers."
-        |
-2:05  "20 fashion brands? One build, they run it forever? That's the model."
-        |
-2:20  "Audit, build, train, hand over. He doesn't try to lock you in."
-        |
-2:30  "You don't need me. That's the point. Ok, I trust this guy."
-```
+| Section | Time | Source | Purpose |
+|---------|------|--------|---------|
+| Hook | 0:00-0:12 | Vid 3 | Same as core |
+| The Reality | 0:12-0:40 | Vid 6 + Vid 5 | Same as core |
+| What I Do | 0:40-1:20 | Vid 5 + Vid 3 | Same as core |
+| Client Proof | 1:20-2:10 | Vid 1 (Sahar) | 4 clips. Real client, real results. |
+| The Difference | 2:10-2:50 | Vid 6 + Vid 3 | Expanded with "unfair advantage" angle |
+| CTA | 2:50-3:30 | Vid 5 + Vid 3 | "You own it." Book 15 min. |
 
 ---
 
-## ALTERNATIVE HOOKS (record all, test)
+## ALTERNATIVE HOOKS (record all, test in ads)
 
-**Hook A (primary, in script):** 8K in 5 days
-"We produced a cinematic video for a hospital in 5 days. 8K resolution, ultra-wide, 3 minutes long. Traditional production would have taken months."
+**Hook A (primary, in script):** Identity
+"I'm a filmmaker and photographer turned AI director. I'm not a tech bro selling you AI tools."
 
-**Hook B:** The gap
-"The gap between companies using AI and companies talking about AI gets wider every month. I'm the person that closes it."
+**Hook B:** The impossible
+"I produced an 8K cinematic video in 5 days. Let me tell you why that matters for your business."
 
-**Hook C:** Direct qualifier
-"If your team is spending more than a week on content that should take a day, you're not using AI wrong. You just don't have a system."
+**Hook C:** The gap
+"Most brands are either doing nothing with AI, or they're experimenting without direction. Both are losing."
 
-**Hook D:** Cold open with demo
-*[3 seconds: screen recording of pipeline running - brief in, content out]*
-"That just happened in 40 seconds. Let me show you how."
+**Hook D:** Taste
+"If you use AI to cut costs, you're going to reduce quality. You need someone with taste behind the tool."
 
----
-
-## RECORDING CHECKLIST
-
-```
-PRE-RECORDING:
-[ ] This script printed or on second screen
-[ ] Calendly link finalized and tested
-[ ] Camera positioned at desk, natural light
-[ ] Lapel mic tested
-[ ] Phone on silent
-[ ] Screen recording software ready (OBS - CHECK ENCODING SETTINGS)
-[ ] Have open and ready to show:
-    [ ] Burjeel pipeline / final video clips
-    [ ] PLAAY product render examples
-    [ ] Workflow interface / brief-to-content demo
-    [ ] Any pipeline diagram or process visual
-[ ] Outfit: casual, on-brand
-
-RECORDING ORDER:
-1. All 4 hooks (2-3 takes each)
-2. Problem section (2-3 takes)
-3. What I Do - core version (2-3 takes)
-4. What I Do - expanded version with case study details (2-3 takes)
-5. CTA (2-3 takes)
-6. Screen demo recordings (separate from talking head)
-
-POST-RECORDING:
-[ ] Send all files to Mo
-[ ] Mo assembles core 2-3 min cut first
-[ ] Core cut goes live on site immediately
-[ ] Interview clips recorded over next 2-3 weeks
-[ ] Mo assembles extended 3-5 min cut
-[ ] Extended cut replaces core on homepage
-```
-
----
-
-## INTERVIEW QUESTIONS
-
-### For Clients (Rashi, Sahar)
-1. "What was the challenge you were dealing with before we started working together?"
-2. "What was the experience like?"
-3. "What specific results did you see?"
-4. "What would you say to someone who's thinking about it but hasn't reached out yet?"
-
-### For Itay (Weavy Founder)
-1. "What's the biggest mistake you see companies making with AI creative tools right now?"
-2. "What separates the people who actually get results with AI from those who don't?"
-3. "How would you describe Zein's approach to this space?"
-
-### For Rowan
-1. "How do you know Zein and what's your experience of his work?"
-2. "What do you think he does differently than other people working in AI production?"
-
-### Rules:
-- Keep each interview to 15-20 minutes max
-- Best clips will be 20-30 seconds each
-- Good lighting and audio on their end (send them a quick setup guide)
-- Record via Google Meet or Zoom with recording permission
-- Mo edits clips to the strongest 20-30 second moments
+**Hook E:** Cold open with demo
+*[3 seconds: pipeline running, brief in, content out]*
+"That just happened in 40 seconds."
 
 ---
 
@@ -299,10 +230,21 @@ POST-RECORDING:
 
 | Cut | Length | Content | Platform |
 |-----|--------|---------|----------|
-| Hook clip | 15s | Opening hook + "system not tool" | Reels, TikTok |
-| Problem clip | 30s | Two bad options + cost of waiting | LinkedIn, Feed |
-| Mini VSL | 60s | Hook + problem + condensed CTA | Ads, LinkedIn |
-| Core VSL | 2:00 | Full core script | Website hero |
-| Extended VSL | 3:30 | Full with interviews | Website (replaces core) |
+| Identity hook | 12s | "Filmmaker turned AI director" | Reels, TikTok, Shorts |
+| Taste clip | 20s | "Taste can't be automated" section | LinkedIn, Feed |
+| Sahar testimonial | 30s | Best 2 Sahar clips combined | LinkedIn, Stories |
+| Mini VSL | 60s | Hook + reality + condensed CTA | Ads, LinkedIn |
+| Core VSL | 2:30 | Full core script | Website hero |
+| Extended VSL | 4:00 | Full with Sahar clips | Website (replaces core later) |
 
-Each social cut ends with "Link in bio" or site URL overlay.
+---
+
+## RECORDING NOTES
+
+Most of the core content already exists in your recordings (Vid 3, 5, 6). The script above is composed almost entirely from things you already said naturally on camera. When recording the final version:
+
+- Don't try to memorize this. Use your recordings as a reference for the energy and phrasing.
+- Record each section separately, 2-3 takes.
+- The Sahar interview clips from Vid 1 just need to be edited down to the timestamps above.
+- Rashi's interview (Vid 2) was just an opening. You'll need to do the full interview still.
+- Screen demo B-roll can be recorded separately in OBS (check encoding settings first).

@@ -5,17 +5,17 @@ import Reveal from "./Reveal";
 const services = [
   {
     num: "01",
-    title: "AI Consulting",
+    title: "Consulting",
     desc: "I audit your creative workflow, identify where AI fits, build the strategy, and train your team to run it independently.",
   },
   {
     num: "02",
-    title: "AI Production",
+    title: "AI-Powered Productions",
     desc: "Visuals, video, TVCs, and content at scale. From product renders to broadcast-quality commercials. Built on pipelines, not one-offs.",
   },
   {
     num: "03",
-    title: "AI Systems & Workflows",
+    title: "Systems & Workflows",
     desc: "Custom tools and integrations that automate the work your team shouldn't be doing manually. Email, research, scripts, presentations, and more.",
   },
 ];

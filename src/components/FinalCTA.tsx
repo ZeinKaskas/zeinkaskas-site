@@ -26,7 +26,7 @@ export default function FinalCTA() {
 
       <Reveal delay={0.16}>
         <a
-          href="#"
+          href="/book"
           className="inline-block bg-white text-[#0A0A0A] px-[22px] py-[10px] rounded-lg text-[13px] font-semibold hover:opacity-90 transition-opacity"
         >
           Book a Call

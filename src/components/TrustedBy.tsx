@@ -1,36 +1,49 @@
 "use client";
 
+import Image from "next/image";
 import Reveal from "./Reveal";
 
 const brands = [
-  "Samsung",
-  "Downy",
-  "Northern & Shell",
-  "Afia",
-  "Ministry of Defense KSA",
-  "Mashreq Bank",
-  "PLAAY",
-  "Bambuyu",
-  "Weavy",
+  { name: "Samsung", logo: "/logos/samsung.png", w: 140 },
+  { name: "Burjeel Holdings", logo: "/logos/burjeel.png", w: 80 },
+  { name: "Mashreq Bank", logo: "/logos/mashreq.png", w: 160 },
+  { name: "Ministry of Defense KSA", logo: "/logos/mod-ksa.png", w: 80 },
+  { name: "Weavy", logo: "/logos/weavy.png", w: 110 },
+  { name: "Northern & Shell", logo: "/logos/northern-shell.png", w: 64 },
+  { name: "Downy", logo: "/logos/downy.png", w: 72 },
+  { name: "Afia", logo: "/logos/afia.png", w: 68 },
+  { name: "PLAAY", logo: "/logos/plaay.png", w: 110 },
+  { name: "Bambuyu", logo: "/logos/bambuyu.png", w: 120 },
+  { name: "Alpro", logo: "/logos/alpro.png", w: 80 },
+  { name: "Ferrero Rocher", logo: "/logos/ferrero-rocher.png", w: 100 },
+  { name: "Chevrolet", logo: "/logos/chevrolet.png", w: 120 },
+  { name: "Homegrown Ventures", logo: "/logos/homegrown-ventures.png", w: 72 },
 ];
 
 export default function TrustedBy() {
   return (
-    <div className="text-center py-14 px-10 border-t border-b border-[rgba(255,255,255,0.04)]">
+    <div className="text-center py-16 px-10 border-t border-b border-[rgba(255,255,255,0.04)]">
       <Reveal>
-        <span className="block text-[11px] uppercase tracking-[3px] text-[rgba(255,255,255,0.2)] mb-6">
+        <span className="block text-[11px] uppercase tracking-[3px] text-[rgba(255,255,255,0.2)] mb-10">
           Trusted by
         </span>
       </Reveal>
       <Reveal delay={0.08}>
-        <div className="flex justify-center items-center gap-9 flex-wrap">
+        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-8 max-w-[860px] mx-auto px-4">
           {brands.map((brand) => (
-            <span
-              key={brand}
-              className="text-[13px] font-medium text-[rgba(255,255,255,0.25)] whitespace-nowrap"
+            <div
+              key={brand.name}
+              className="flex items-center justify-center opacity-50 hover:opacity-80 transition-opacity duration-300"
             >
-              {brand}
-            </span>
+              <Image
+                src={brand.logo}
+                alt={brand.name}
+                width={brand.w}
+                height={60}
+                style={{ width: brand.w, height: "auto" }}
+                unoptimized
+              />
+            </div>
           ))}
         </div>
       </Reveal>

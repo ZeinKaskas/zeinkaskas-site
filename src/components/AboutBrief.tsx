@@ -53,13 +53,9 @@ export default function AboutBrief() {
                 LinkedIn
               </a>
               <a
-                href="#"
-                className="text-xs text-[rgba(255,255,255,0.2)] hover:text-[rgba(255,255,255,0.5)] transition-colors"
-              >
-                TikTok
-              </a>
-              <a
-                href="#"
+                href="https://www.youtube.com/@zeinkaskas4245"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs text-[rgba(255,255,255,0.2)] hover:text-[rgba(255,255,255,0.5)] transition-colors"
               >
                 YouTube

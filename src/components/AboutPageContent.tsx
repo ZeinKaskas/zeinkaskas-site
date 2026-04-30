@@ -121,13 +121,9 @@ export default function AboutPageContent() {
               LinkedIn
             </a>
             <a
-              href="#"
-              className="text-[14px] text-[rgba(255,255,255,0.3)] hover:text-white transition-colors"
-            >
-              TikTok
-            </a>
-            <a
-              href="#"
+              href="https://www.youtube.com/@zeinkaskas4245"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[14px] text-[rgba(255,255,255,0.3)] hover:text-white transition-colors"
             >
               YouTube

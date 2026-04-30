@@ -120,10 +120,18 @@ export default function FeaturedWork() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-12">
-            {featuredCases.map((c, i) => (
-              <CaseCard key={c.title} {...c} delay={i % 2 === 0 ? 0.08 : 0.16} />
-            ))}
+          {/* TEMP: coming-soon overlay — remove this wrapper div once cases are live */}
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-12">
+              {featuredCases.map((c, i) => (
+                <CaseCard key={c.title} {...c} delay={i % 2 === 0 ? 0.08 : 0.16} />
+              ))}
+            </div>
+            <div className="absolute inset-0 mt-12 flex items-center justify-center bg-[rgba(10,10,10,0.65)] backdrop-blur-[2px] rounded-[14px] pointer-events-none">
+              <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.12)] rounded-full px-5 py-2 text-[12px] text-[rgba(255,255,255,0.7)]">
+                Brand new site — case studies launching next week.
+              </div>
+            </div>
           </div>
         </section>
       </div>
@@ -144,10 +152,18 @@ export default function FeaturedWork() {
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mt-12">
-          {recentCases.map((c, i) => (
-            <CaseCard key={c.title} {...c} delay={i * 0.08} />
-          ))}
+        {/* TEMP: coming-soon overlay — remove this wrapper div once cases are live */}
+        <div className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mt-12">
+            {recentCases.map((c, i) => (
+              <CaseCard key={c.title} {...c} delay={i * 0.08} />
+            ))}
+          </div>
+          <div className="absolute inset-0 mt-12 flex items-center justify-center bg-[rgba(10,10,10,0.65)] backdrop-blur-[2px] rounded-[14px] pointer-events-none">
+            <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.12)] rounded-full px-5 py-2 text-[12px] text-[rgba(255,255,255,0.7)]">
+              Brand new site — projects launching next week.
+            </div>
+          </div>
         </div>
 
         <Reveal delay={0.1} className="mt-10">
