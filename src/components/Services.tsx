@@ -22,7 +22,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-[100px] px-10 max-w-[1100px] mx-auto text-center">
+    <section id="services" className="py-16 md:py-[100px] px-5 md:px-10 max-w-[1100px] mx-auto text-center">
       <Reveal>
         <span className="block text-[11px] uppercase tracking-[3px] text-[rgba(255,255,255,0.2)] mb-4">
           What I do
@@ -30,14 +30,14 @@ export default function Services() {
       </Reveal>
       <Reveal delay={0.08}>
         <h2
-          className="text-4xl font-bold tracking-[-1.5px] leading-[1.12]"
+          className="text-[30px] sm:text-[34px] md:text-4xl font-bold tracking-[-1px] md:tracking-[-1.5px] leading-[1.12]"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Three ways I work with brands.
         </h2>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mt-10 md:mt-12 text-left md:text-left">
         {services.map((s, i) => (
           <Reveal key={s.num} delay={i * 0.08}>
             <div className="bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] rounded-[14px] p-[30px_22px] hover:border-[rgba(255,255,255,0.12)] transition-[border-color] duration-300 h-full">

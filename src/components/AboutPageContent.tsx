@@ -1,20 +1,28 @@
 "use client";
 
+import Image from "next/image";
 import Reveal from "./Reveal";
 
 export default function AboutPageContent() {
   return (
-    <section className="pt-40 pb-[100px] px-10 max-w-[680px] mx-auto">
+    <section className="pt-28 md:pt-40 pb-16 md:pb-[100px] px-5 md:px-10 max-w-[680px] mx-auto">
       {/* Photo */}
-      <Reveal className="flex justify-center mb-10">
-        <div className="w-[140px] h-[140px] rounded-full bg-[#111] border border-[rgba(255,255,255,0.06)] flex items-center justify-center text-[10px] text-[rgba(255,255,255,0.12)]">
-          [Photo]
+      <Reveal className="flex justify-center mb-8 md:mb-10">
+        <div className="w-[110px] h-[110px] md:w-[140px] md:h-[140px] rounded-full overflow-hidden border border-[rgba(255,255,255,0.06)]">
+          <Image
+            src="/zein.png"
+            alt="Zein Kaskas"
+            width={280}
+            height={280}
+            className="w-full h-full object-cover"
+            priority
+          />
         </div>
       </Reveal>
 
       <Reveal delay={0.08}>
         <h1
-          className="text-[44px] md:text-[56px] font-bold tracking-[-2.5px] leading-[1.1] mb-8"
+          className="text-[36px] sm:text-[44px] md:text-[56px] font-bold tracking-[-1.5px] md:tracking-[-2.5px] leading-[1.1] mb-6 md:mb-8 text-center md:text-left"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Hey, I&apos;m Zein.
@@ -23,7 +31,7 @@ export default function AboutPageContent() {
 
       <div className="space-y-6">
         <Reveal delay={0.16}>
-          <p className="text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.85]">
+          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.8] md:leading-[1.85]">
             I started in photography and filmmaking. Spent years behind a camera,
             directing shoots, building visual stories for brands. Then AI changed
             everything.
@@ -31,7 +39,7 @@ export default function AboutPageContent() {
         </Reveal>
 
         <Reveal delay={0.24}>
-          <p className="text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.85]">
+          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.8] md:leading-[1.85]">
             Not because it replaced what I did. Because it removed the limits. Ideas
             that used to take a full production team and a six-figure budget? I could
             build them in a week. Product shoots that needed a studio, models, and a
@@ -40,7 +48,7 @@ export default function AboutPageContent() {
         </Reveal>
 
         <Reveal delay={0.32}>
-          <p className="text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.85]">
+          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.8] md:leading-[1.85]">
             Now I help brands do the same. I work at the intersection of direction,
             design, and AI. I build systems that make teams faster and sharper without
             losing the human part. Every system or campaign I build is meant to be
@@ -49,7 +57,7 @@ export default function AboutPageContent() {
         </Reveal>
 
         <Reveal delay={0.4}>
-          <p className="text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.85]">
+          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.8] md:leading-[1.85]">
             I use AI as a collaborator, not a replacement. The taste, the creative
             direction, the decision-making? That still needs a person. AI handles
             everything else.
@@ -59,7 +67,7 @@ export default function AboutPageContent() {
 
       {/* What I do */}
       <Reveal delay={0.1}>
-        <div className="mt-16 pt-16 border-t border-[rgba(255,255,255,0.06)]">
+        <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-[rgba(255,255,255,0.06)]">
           <h2
             className="text-[24px] font-bold tracking-[-1px] mb-8"
             style={{ fontFamily: "var(--font-display)" }}
@@ -96,7 +104,7 @@ export default function AboutPageContent() {
 
       {/* Socials */}
       <Reveal delay={0.1}>
-        <div className="mt-16 pt-16 border-t border-[rgba(255,255,255,0.06)]">
+        <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-[rgba(255,255,255,0.06)]">
           <h2
             className="text-[24px] font-bold tracking-[-1px] mb-6"
             style={{ fontFamily: "var(--font-display)" }}

@@ -63,7 +63,7 @@ const allProjects = [
 
 export default function WorkPageContent() {
   return (
-    <section className="pt-40 pb-[100px] px-10 max-w-[1100px] mx-auto">
+    <section className="pt-28 md:pt-40 pb-16 md:pb-[100px] px-5 md:px-10 max-w-[1100px] mx-auto">
       <Reveal>
         <span className="block text-[11px] uppercase tracking-[3px] text-[rgba(255,255,255,0.2)] mb-4">
           Portfolio
@@ -71,14 +71,14 @@ export default function WorkPageContent() {
       </Reveal>
       <Reveal delay={0.08}>
         <h1
-          className="text-[44px] md:text-[56px] font-bold tracking-[-2.5px] leading-[1.1] mb-4"
+          className="text-[40px] sm:text-[44px] md:text-[56px] font-bold tracking-[-1.5px] md:tracking-[-2.5px] leading-[1.1] mb-4"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Work
         </h1>
       </Reveal>
       <Reveal delay={0.16}>
-        <p className="text-base text-[rgba(255,255,255,0.4)] font-light leading-[1.7] max-w-[520px] mb-16">
+        <p className="text-[15px] md:text-base text-[rgba(255,255,255,0.4)] font-light leading-[1.7] max-w-[520px] mb-12 md:mb-16">
           Real systems built for real brands. From AI video production to
           automated workflows, each project solves a specific problem at scale.
         </p>

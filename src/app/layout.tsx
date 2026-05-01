@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
@@ -52,6 +52,13 @@ export const metadata: Metadata = {
     follow: true,
   },
   metadataBase: new URL("https://zeinkaskas.com"),
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#0A0A0A",
 };
 
 export default function RootLayout({

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Reveal from "./Reveal";
 
 export default function AboutBrief() {
@@ -8,12 +9,19 @@ export default function AboutBrief() {
       id="about"
       className="bg-[rgba(255,255,255,0.02)] border-b border-[rgba(255,255,255,0.04)]"
     >
-      <section className="py-[100px] px-10 max-w-[1100px] mx-auto">
+      <section className="py-16 md:py-[100px] px-5 md:px-10 max-w-[1100px] mx-auto">
         <div className="flex flex-col items-center text-center max-w-[480px] mx-auto">
-          {/* Photo placeholder */}
+          {/* Photo */}
           <Reveal>
-            <div className="w-[100px] h-[100px] rounded-full bg-[#111] border border-[rgba(255,255,255,0.06)] flex items-center justify-center text-[10px] text-[rgba(255,255,255,0.12)] mb-[22px]">
-              [Photo]
+            <div className="w-[100px] h-[100px] rounded-full overflow-hidden border border-[rgba(255,255,255,0.06)] mb-[22px]">
+              <Image
+                src="/zein.png"
+                alt="Zein Kaskas"
+                width={200}
+                height={200}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
           </Reveal>
 

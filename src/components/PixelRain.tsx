@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 
 const COLORS: [number, number, number][] = [
   [226, 40, 114],
@@ -49,8 +49,18 @@ export default function PixelRain() {
   const trailDataRef = useRef<Float32Array | null>(null);
   const dimsRef = useRef({ cols: 0, rows: 0 });
   const rafRef = useRef<number>(0);
+  const frameSkipRef = useRef(0);
 
-  const PIXEL = 6;
+  // Detect mobile / low-power device once on mount
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 768px), (pointer: coarse)");
+    setIsMobile(mql.matches);
+  }, []);
+
+  const PIXEL = isMobile ? 10 : 6;
+  const DROP_COUNT = isMobile ? 22 : 80;
+  const FRAME_SKIP = isMobile ? 1 : 0; // 1 = render every other frame (~30fps)
 
   const resize = useCallback(() => {
     const canvas = canvasRef.current;
@@ -69,12 +79,12 @@ export default function PixelRain() {
 
     dimsRef.current = { cols, rows };
     trailDataRef.current = null;
-  }, []);
+  }, [PIXEL]);
 
   useEffect(() => {
     // Initialize drops
     const drops: Drop[] = [];
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < DROP_COUNT; i++) {
       drops.push({
         x: Math.floor(Math.random() * 300),
         y: Math.floor(Math.random() * 200),
@@ -133,15 +143,30 @@ export default function PixelRain() {
       shakeRef.current = 3;
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("click", handleClick);
+    document.addEventListener("mousemove", handleMouseMove, { passive: true });
+    // Skip click sparks on mobile (touch already triggers scroll/tap interactions)
+    if (!isMobile) {
+      document.addEventListener("click", handleClick);
+    }
 
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    let frameCounter = 0;
+
     function draw() {
+      // Frame-skip on mobile to halve CPU load
+      if (FRAME_SKIP > 0) {
+        frameCounter++;
+        if (frameCounter <= FRAME_SKIP) {
+          rafRef.current = requestAnimationFrame(draw);
+          return;
+        }
+        frameCounter = 0;
+      }
+
       const { cols, rows } = dimsRef.current;
       if (cols === 0 || rows === 0) {
         rafRef.current = requestAnimationFrame(draw);
@@ -295,7 +320,7 @@ export default function PixelRain() {
       document.removeEventListener("click", handleClick);
       window.removeEventListener("resize", resize);
     };
-  }, [resize]);
+  }, [resize, DROP_COUNT, FRAME_SKIP, PIXEL, isMobile]);
 
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden">

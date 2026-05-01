@@ -6,11 +6,11 @@ export default function FinalCTA() {
   return (
     <section
       id="contact"
-      className="text-center py-[120px] px-10 border-t border-[rgba(255,255,255,0.04)]"
+      className="text-center py-20 md:py-[120px] px-5 md:px-10 border-t border-[rgba(255,255,255,0.04)]"
     >
       <Reveal>
         <h2
-          className="text-4xl font-bold tracking-[-1.5px] leading-[1.12] mb-3.5"
+          className="text-[30px] sm:text-[34px] md:text-4xl font-bold tracking-[-1px] md:tracking-[-1.5px] leading-[1.12] mb-3.5"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Let&apos;s talk.
@@ -18,7 +18,7 @@ export default function FinalCTA() {
       </Reveal>
 
       <Reveal delay={0.08}>
-        <p className="text-base text-[rgba(255,255,255,0.4)] font-light leading-[1.7] max-w-[480px] mx-auto mb-8">
+        <p className="text-[15px] md:text-base text-[rgba(255,255,255,0.4)] font-light leading-[1.7] max-w-[480px] mx-auto mb-8">
           15 minutes. I&apos;ll tell you where AI fits in your creative workflow
           and what it would take to get there.
         </p>

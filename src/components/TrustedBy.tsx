@@ -5,6 +5,8 @@ import Reveal from "./Reveal";
 
 const brands = [
   { name: "Samsung", logo: "/logos/samsung.png", w: 140 },
+  { name: "Google", logo: "/logos/google.svg", w: 96 },
+  { name: "Figma", logo: "/logos/figma.svg", w: 96 },
   { name: "Burjeel Holdings", logo: "/logos/burjeel.png", w: 80 },
   { name: "Mashreq Bank", logo: "/logos/mashreq.png", w: 160 },
   { name: "Ministry of Defense KSA", logo: "/logos/mod-ksa.png", w: 80 },
@@ -22,14 +24,14 @@ const brands = [
 
 export default function TrustedBy() {
   return (
-    <div className="text-center py-16 px-10 border-t border-b border-[rgba(255,255,255,0.04)]">
+    <div className="text-center py-12 md:py-16 px-5 md:px-10 border-t border-b border-[rgba(255,255,255,0.04)]">
       <Reveal>
         <span className="block text-[11px] uppercase tracking-[3px] text-[rgba(255,255,255,0.2)] mb-10">
           Trusted by
         </span>
       </Reveal>
       <Reveal delay={0.08}>
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-8 max-w-[860px] mx-auto px-4">
+        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-6 md:gap-x-10 md:gap-y-8 max-w-[860px] mx-auto px-2 md:px-4">
           {brands.map((brand) => (
             <div
               key={brand.name}
@@ -40,7 +42,10 @@ export default function TrustedBy() {
                 alt={brand.name}
                 width={brand.w}
                 height={60}
-                style={{ width: brand.w, height: "auto" }}
+                style={{
+                  width: `min(${brand.w}px, 30vw)`,
+                  height: "auto",
+                }}
                 unoptimized
               />
             </div>

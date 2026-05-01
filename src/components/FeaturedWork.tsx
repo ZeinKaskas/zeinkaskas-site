@@ -105,7 +105,7 @@ export default function FeaturedWork() {
         id="work"
         className="bg-[rgba(255,255,255,0.02)] border-t border-b border-[rgba(255,255,255,0.04)]"
       >
-        <section className="py-[100px] px-10 max-w-[1100px] mx-auto text-center">
+        <section className="py-16 md:py-[100px] px-5 md:px-10 max-w-[1100px] mx-auto text-center">
           <Reveal>
             <span className="block text-[11px] uppercase tracking-[3px] text-[rgba(255,255,255,0.2)] mb-4">
               Featured work
@@ -113,7 +113,7 @@ export default function FeaturedWork() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2
-              className="text-4xl font-bold tracking-[-1.5px] leading-[1.12]"
+              className="text-[30px] sm:text-[34px] md:text-4xl font-bold tracking-[-1px] md:tracking-[-1.5px] leading-[1.12]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Real systems. Real results.
@@ -122,13 +122,13 @@ export default function FeaturedWork() {
 
           {/* TEMP: coming-soon overlay — remove this wrapper div once cases are live */}
           <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-10 md:mt-12">
               {featuredCases.map((c, i) => (
                 <CaseCard key={c.title} {...c} delay={i % 2 === 0 ? 0.08 : 0.16} />
               ))}
             </div>
-            <div className="absolute inset-0 mt-12 flex items-center justify-center bg-[rgba(10,10,10,0.65)] backdrop-blur-[2px] rounded-[14px] pointer-events-none">
-              <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.12)] rounded-full px-5 py-2 text-[12px] text-[rgba(255,255,255,0.7)]">
+            <div className="absolute inset-0 mt-10 md:mt-12 flex items-center justify-center bg-[rgba(10,10,10,0.65)] backdrop-blur-[2px] rounded-[14px] pointer-events-none px-4">
+              <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.12)] rounded-full px-4 md:px-5 py-2 text-[11px] md:text-[12px] text-[rgba(255,255,255,0.7)] text-center">
                 Brand new site — case studies launching next week.
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function FeaturedWork() {
       </div>
 
       {/* Recent Work */}
-      <section className="py-[100px] px-10 max-w-[1100px] mx-auto text-center">
+      <section className="py-16 md:py-[100px] px-5 md:px-10 max-w-[1100px] mx-auto text-center">
         <Reveal>
           <span className="block text-[11px] uppercase tracking-[3px] text-[rgba(255,255,255,0.2)] mb-4">
             Recent work
@@ -145,7 +145,7 @@ export default function FeaturedWork() {
         </Reveal>
         <Reveal delay={0.08}>
           <h2
-            className="text-4xl font-bold tracking-[-1.5px] leading-[1.12]"
+            className="text-[30px] sm:text-[34px] md:text-4xl font-bold tracking-[-1px] md:tracking-[-1.5px] leading-[1.12]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Latest projects.
@@ -154,13 +154,13 @@ export default function FeaturedWork() {
 
         {/* TEMP: coming-soon overlay — remove this wrapper div once cases are live */}
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mt-10 md:mt-12">
             {recentCases.map((c, i) => (
               <CaseCard key={c.title} {...c} delay={i * 0.08} />
             ))}
           </div>
-          <div className="absolute inset-0 mt-12 flex items-center justify-center bg-[rgba(10,10,10,0.65)] backdrop-blur-[2px] rounded-[14px] pointer-events-none">
-            <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.12)] rounded-full px-5 py-2 text-[12px] text-[rgba(255,255,255,0.7)]">
+          <div className="absolute inset-0 mt-10 md:mt-12 flex items-center justify-center bg-[rgba(10,10,10,0.65)] backdrop-blur-[2px] rounded-[14px] pointer-events-none px-4">
+            <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.12)] rounded-full px-4 md:px-5 py-2 text-[11px] md:text-[12px] text-[rgba(255,255,255,0.7)] text-center">
               Brand new site — projects launching next week.
             </div>
           </div>

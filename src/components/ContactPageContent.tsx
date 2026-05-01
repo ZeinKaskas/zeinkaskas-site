@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 
 export default function ContactPageContent() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center px-10 py-20">
+    <section className="min-h-screen flex flex-col items-center justify-center text-center px-5 md:px-10 py-20">
       <Reveal>
         <span className="block text-[11px] uppercase tracking-[3px] text-[rgba(255,255,255,0.2)] mb-4">
           Get in touch
@@ -13,7 +13,7 @@ export default function ContactPageContent() {
 
       <Reveal delay={0.08}>
         <h1
-          className="text-[44px] md:text-[56px] font-bold tracking-[-2.5px] leading-[1.1] mb-6"
+          className="text-[36px] sm:text-[44px] md:text-[56px] font-bold tracking-[-1.5px] md:tracking-[-2.5px] leading-[1.1] mb-6"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Let&apos;s talk.
@@ -21,7 +21,7 @@ export default function ContactPageContent() {
       </Reveal>
 
       <Reveal delay={0.16}>
-        <p className="text-[17px] text-[rgba(255,255,255,0.4)] font-light leading-[1.7] max-w-[480px] mx-auto mb-10">
+        <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.4)] font-light leading-[1.7] max-w-[480px] mx-auto mb-10">
           15 minutes. I&apos;ll tell you where AI fits in your creative workflow
           and what it would take to get there.
         </p>
