@@ -7,6 +7,7 @@ const brands = [
   { name: "Samsung", logo: "/logos/samsung.png", w: 140 },
   { name: "Google", logo: "/logos/google.svg", w: 96 },
   { name: "Figma", logo: "/logos/figma.svg", w: 96 },
+  { name: "Meena Health", logo: "/logos/meena.svg", w: 110 },
   { name: "Burjeel Holdings", logo: "/logos/burjeel.png", w: 80 },
   { name: "Mashreq Bank", logo: "/logos/mashreq.png", w: 160 },
   { name: "Ministry of Defense KSA", logo: "/logos/mod-ksa.png", w: 80 },
