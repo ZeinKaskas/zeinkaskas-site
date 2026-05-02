@@ -47,9 +47,9 @@ export default function PixelRain() {
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const shakeRef = useRef(0);
   const trailDataRef = useRef<Float32Array | null>(null);
+  const imageDataRef = useRef<ImageData | null>(null);
   const dimsRef = useRef({ cols: 0, rows: 0 });
   const rafRef = useRef<number>(0);
-  const frameSkipRef = useRef(0);
 
   // Detect mobile / low-power device once on mount
   const [isMobile, setIsMobile] = useState(false);
@@ -58,9 +58,10 @@ export default function PixelRain() {
     setIsMobile(mql.matches);
   }, []);
 
-  const PIXEL = isMobile ? 10 : 6;
-  const DROP_COUNT = isMobile ? 22 : 80;
-  const FRAME_SKIP = isMobile ? 1 : 0; // 1 = render every other frame (~30fps)
+  // Mobile gets smaller pixels (4 vs 6) and fewer drops (14 vs 80) so 60fps is reachable.
+  // Desktop is intentionally untouched.
+  const PIXEL = isMobile ? 4 : 6;
+  const DROP_COUNT = isMobile ? 14 : 80;
 
   const resize = useCallback(() => {
     const canvas = canvasRef.current;
@@ -79,10 +80,10 @@ export default function PixelRain() {
 
     dimsRef.current = { cols, rows };
     trailDataRef.current = null;
+    imageDataRef.current = null;
   }, [PIXEL]);
 
   useEffect(() => {
-    // Initialize drops
     const drops: Drop[] = [];
     for (let i = 0; i < DROP_COUNT; i++) {
       drops.push({
@@ -144,7 +145,6 @@ export default function PixelRain() {
     };
 
     document.addEventListener("mousemove", handleMouseMove, { passive: true });
-    // Skip click sparks on mobile (touch already triggers scroll/tap interactions)
     if (!isMobile) {
       document.addEventListener("click", handleClick);
     }
@@ -154,22 +154,132 @@ export default function PixelRain() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let frameCounter = 0;
-
-    function draw() {
-      // Frame-skip on mobile to halve CPU load
-      if (FRAME_SKIP > 0) {
-        frameCounter++;
-        if (frameCounter <= FRAME_SKIP) {
-          rafRef.current = requestAnimationFrame(draw);
-          return;
-        }
-        frameCounter = 0;
-      }
-
+    // ---------- Mobile-optimized loop ----------
+    // Writes the trail directly into the ImageData buffer (Uint8ClampedArray),
+    // skipping a separate Float32 trail array and skipping per-frame ImageData
+    // allocation. Result: tighter inner loops, no GC churn, smaller pixels +
+    // higher FPS at the same time.
+    function drawMobile() {
       const { cols, rows } = dimsRef.current;
       if (cols === 0 || rows === 0) {
-        rafRef.current = requestAnimationFrame(draw);
+        rafRef.current = requestAnimationFrame(drawMobile);
+        return;
+      }
+
+      let imageData = imageDataRef.current;
+      if (!imageData || imageData.width !== cols || imageData.height !== rows) {
+        imageData = ctx!.createImageData(cols, rows);
+        // Pre-fill alpha to 255 once; we'll never touch it again.
+        const d = imageData.data;
+        for (let i = 3; i < d.length; i += 4) d[i] = 255;
+        imageDataRef.current = imageData;
+      }
+
+      const data = imageData.data;
+      const total = cols * rows * 4;
+      const drops = dropsRef.current;
+      const sparks = sparksRef.current;
+      const mx = mouseRef.current.x / PIXEL;
+      const my = mouseRef.current.y / PIXEL;
+
+      // Fade RGB in place. Floor at 10 so the canvas keeps its dark glow
+      // (matches the desktop "+10 base brightness" without an extra render pass).
+      for (let i = 0; i < total; i += 4) {
+        const r = data[i] * 247 >> 8;       // ~* 0.965
+        const g = data[i + 1] * 247 >> 8;
+        const b = data[i + 2] * 247 >> 8;
+        data[i] = r > 10 ? r : 10;
+        data[i + 1] = g > 10 ? g : 10;
+        data[i + 2] = b > 10 ? b : 10;
+      }
+
+      // Sparks (still cheap; usually 0 on mobile since click-sparks are disabled)
+      for (let i = sparks.length - 1; i >= 0; i--) {
+        const s = sparks[i];
+        s.vx *= 0.95;
+        s.vy *= 0.95;
+        s.vy += 0.008;
+        s.x += s.vx;
+        s.y += s.vy;
+
+        if (Math.abs(s.vx) < 0.05 && s.vy > 0) {
+          drops.push({
+            x: s.x, y: s.y, color: s.color,
+            speed: 0.15 + Math.random() * 0.4,
+            alpha: s.alpha, bx: 0, by: 0,
+          });
+          sparks.splice(i, 1);
+          continue;
+        }
+
+        const px = s.x | 0;
+        const py = s.y | 0;
+        if (px >= 0 && px < cols && py >= 0 && py < rows) {
+          const idx = (py * cols + px) * 4;
+          const r = (s.color[0] * s.alpha) | 0;
+          const g = (s.color[1] * s.alpha) | 0;
+          const b = (s.color[2] * s.alpha) | 0;
+          if (r > data[idx]) data[idx] = r;
+          if (g > data[idx + 1]) data[idx + 1] = g;
+          if (b > data[idx + 2]) data[idx + 2] = b;
+        }
+
+        if (py > rows + 5 || px < -5 || px > cols + 5) sparks.splice(i, 1);
+      }
+
+      // Drops update + stamp
+      for (const d of drops) {
+        if (d.bx !== 0 || d.by !== 0) {
+          d.x += d.bx;
+          d.y += d.by;
+          d.bx *= 0.92;
+          d.by *= 0.92;
+          if (Math.abs(d.bx) < 0.03 && Math.abs(d.by) < 0.03) {
+            d.bx = 0; d.by = 0;
+          }
+        }
+
+        d.y += d.speed;
+
+        const dx = d.x - mx;
+        const dy = d.y - my;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 18 && dist > 0) {
+          const push = (1 - dist / 18) * 1.5;
+          d.x += (dx / dist) * push;
+          d.y += (dy / dist) * push * 0.5;
+        }
+
+        if (d.y >= rows) {
+          d.y = -1;
+          d.x = Math.floor(Math.random() * cols);
+          d.color = pick();
+          d.alpha = 0.2 + Math.random() * 0.4;
+        }
+
+        const px = d.x | 0;
+        const py = d.y | 0;
+        if (px >= 0 && px < cols && py >= 0 && py < rows) {
+          const idx = (py * cols + px) * 4;
+          const r = (d.color[0] * d.alpha) | 0;
+          const g = (d.color[1] * d.alpha) | 0;
+          const b = (d.color[2] * d.alpha) | 0;
+          if (r > data[idx]) data[idx] = r;
+          if (g > data[idx + 1]) data[idx + 1] = g;
+          if (b > data[idx + 2]) data[idx + 2] = b;
+        }
+      }
+
+      ctx!.putImageData(imageData, 0, 0);
+
+      rafRef.current = requestAnimationFrame(drawMobile);
+    }
+
+    // ---------- Desktop loop (UNCHANGED from original) ----------
+    function drawDesktop() {
+      const { cols, rows } = dimsRef.current;
+      if (cols === 0 || rows === 0) {
+        rafRef.current = requestAnimationFrame(drawDesktop);
         return;
       }
 
@@ -186,14 +296,12 @@ export default function PixelRain() {
       const drops = dropsRef.current;
       const sparks = sparksRef.current;
 
-      // Fade trail
       for (let i = 0; i < trailData.length; i += 4) {
         trailData[i] *= 0.97;
         trailData[i + 1] *= 0.97;
         trailData[i + 2] *= 0.97;
       }
 
-      // Update sparks
       for (let i = sparks.length - 1; i >= 0; i--) {
         const s = sparks[i];
         s.vx *= 0.95;
@@ -204,13 +312,9 @@ export default function PixelRain() {
 
         if (Math.abs(s.vx) < 0.05 && s.vy > 0) {
           drops.push({
-            x: s.x,
-            y: s.y,
-            color: s.color,
+            x: s.x, y: s.y, color: s.color,
             speed: 0.15 + Math.random() * 0.4,
-            alpha: s.alpha,
-            bx: 0,
-            by: 0,
+            alpha: s.alpha, bx: 0, by: 0,
           });
           sparks.splice(i, 1);
           continue;
@@ -221,22 +325,13 @@ export default function PixelRain() {
         if (px >= 0 && px < cols && py >= 0 && py < rows) {
           const idx = (py * cols + px) * 4;
           trailData[idx] = Math.max(trailData[idx], s.color[0] * s.alpha);
-          trailData[idx + 1] = Math.max(
-            trailData[idx + 1],
-            s.color[1] * s.alpha
-          );
-          trailData[idx + 2] = Math.max(
-            trailData[idx + 2],
-            s.color[2] * s.alpha
-          );
+          trailData[idx + 1] = Math.max(trailData[idx + 1], s.color[1] * s.alpha);
+          trailData[idx + 2] = Math.max(trailData[idx + 2], s.color[2] * s.alpha);
         }
 
-        if (py > rows + 5 || px < -5 || px > cols + 5) {
-          sparks.splice(i, 1);
-        }
+        if (py > rows + 5 || px < -5 || px > cols + 5) sparks.splice(i, 1);
       }
 
-      // Update drops
       for (const d of drops) {
         if (d.bx !== 0 || d.by !== 0) {
           d.x += d.bx;
@@ -244,8 +339,7 @@ export default function PixelRain() {
           d.bx *= 0.92;
           d.by *= 0.92;
           if (Math.abs(d.bx) < 0.03 && Math.abs(d.by) < 0.03) {
-            d.bx = 0;
-            d.by = 0;
+            d.bx = 0; d.by = 0;
           }
         }
 
@@ -272,18 +366,11 @@ export default function PixelRain() {
         if (px >= 0 && px < cols && py >= 0 && py < rows) {
           const idx = (py * cols + px) * 4;
           trailData[idx] = Math.max(trailData[idx], d.color[0] * d.alpha);
-          trailData[idx + 1] = Math.max(
-            trailData[idx + 1],
-            d.color[1] * d.alpha
-          );
-          trailData[idx + 2] = Math.max(
-            trailData[idx + 2],
-            d.color[2] * d.alpha
-          );
+          trailData[idx + 1] = Math.max(trailData[idx + 1], d.color[1] * d.alpha);
+          trailData[idx + 2] = Math.max(trailData[idx + 2], d.color[2] * d.alpha);
         }
       }
 
-      // Render
       const imageData = ctx!.createImageData(cols, rows);
       const data = imageData.data;
       for (let i = 0; i < cols * rows; i++) {
@@ -295,7 +382,6 @@ export default function PixelRain() {
       }
       ctx!.putImageData(imageData, 0, 0);
 
-      // Shake
       const canvasEl = canvasRef.current;
       if (canvasEl) {
         if (shakeRef.current > 0.2) {
@@ -309,10 +395,11 @@ export default function PixelRain() {
         }
       }
 
-      rafRef.current = requestAnimationFrame(draw);
+      rafRef.current = requestAnimationFrame(drawDesktop);
     }
 
-    draw();
+    if (isMobile) drawMobile();
+    else drawDesktop();
 
     return () => {
       cancelAnimationFrame(rafRef.current);
@@ -320,7 +407,7 @@ export default function PixelRain() {
       document.removeEventListener("click", handleClick);
       window.removeEventListener("resize", resize);
     };
-  }, [resize, DROP_COUNT, FRAME_SKIP, PIXEL, isMobile]);
+  }, [resize, DROP_COUNT, PIXEL, isMobile]);
 
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden">
