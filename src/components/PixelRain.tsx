@@ -20,6 +20,10 @@ function pick(): [number, number, number] {
   return COLORS[Math.floor(Math.random() * COLORS.length)];
 }
 
+// Mobile-only tuning constants. Kept module-level to stay out of effect deps.
+const MOBILE_SPEED_MULT = 2; // 2x faster fall
+const MOBILE_FADE_NUM = 253; // x * 253 >> 8 ≈ x * 0.988 (longer tails than desktop's 0.97)
+
 interface Drop {
   x: number;
   y: number;
@@ -58,10 +62,10 @@ export default function PixelRain() {
     setIsMobile(mql.matches);
   }, []);
 
-  // Mobile gets smaller pixels (4 vs 6) and fewer drops (14 vs 80) so 60fps is reachable.
+  // Mobile path: slightly smaller pixels than desktop's 6, more drops, but tuned for 60fps.
   // Desktop is intentionally untouched.
-  const PIXEL = isMobile ? 4 : 6;
-  const DROP_COUNT = isMobile ? 14 : 80;
+  const PIXEL = isMobile ? 5 : 6;
+  const DROP_COUNT = isMobile ? 26 : 80;
 
   const resize = useCallback(() => {
     const canvas = canvasRef.current;
@@ -184,10 +188,11 @@ export default function PixelRain() {
 
       // Fade RGB in place. Floor at 10 so the canvas keeps its dark glow
       // (matches the desktop "+10 base brightness" without an extra render pass).
+      const f = MOBILE_FADE_NUM;
       for (let i = 0; i < total; i += 4) {
-        const r = data[i] * 247 >> 8;       // ~* 0.965
-        const g = data[i + 1] * 247 >> 8;
-        const b = data[i + 2] * 247 >> 8;
+        const r = data[i] * f >> 8;
+        const g = data[i + 1] * f >> 8;
+        const b = data[i + 2] * f >> 8;
         data[i] = r > 10 ? r : 10;
         data[i + 1] = g > 10 ? g : 10;
         data[i + 2] = b > 10 ? b : 10;
@@ -239,7 +244,7 @@ export default function PixelRain() {
           }
         }
 
-        d.y += d.speed;
+        d.y += d.speed * MOBILE_SPEED_MULT;
 
         const dx = d.x - mx;
         const dy = d.y - my;
