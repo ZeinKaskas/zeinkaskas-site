@@ -22,7 +22,7 @@ function pick(): [number, number, number] {
 
 // Mobile-only tuning constants. Kept module-level to stay out of effect deps.
 const MOBILE_SPEED_MULT = 2; // 2x faster fall
-const MOBILE_FADE_NUM = 253; // x * 253 >> 8 ≈ x * 0.988 (longer tails than desktop's 0.97)
+const MOBILE_FADE_NUM = 250; // x * 250 >> 8 ≈ x * 0.977 (slightly shorter tails than desktop's 0.97)
 
 interface Drop {
   x: number;
@@ -232,8 +232,13 @@ export default function PixelRain() {
         if (py > rows + 5 || px < -5 || px > cols + 5) sparks.splice(i, 1);
       }
 
-      // Drops update + stamp
+      // Drops update + stamp (with line interpolation so fast drops don't gap)
       for (const d of drops) {
+        // Capture position BEFORE this frame's motion so we can fill in
+        // every integer cell traversed (fixes gaps when speed > 1 cell/frame).
+        const prevX = d.x;
+        const prevY = d.y;
+
         if (d.bx !== 0 || d.by !== 0) {
           d.x += d.bx;
           d.y += d.by;
@@ -255,23 +260,33 @@ export default function PixelRain() {
           d.y += (dy / dist) * push * 0.5;
         }
 
+        // Stamp the line from (prevX, prevY) to (d.x, d.y) BEFORE checking
+        // respawn — that way the trail draws cleanly to the edge, and the
+        // respawn doesn't draw a streak from old position to top of screen.
+        const segDx = d.x - prevX;
+        const segDy = d.y - prevY;
+        const span = Math.abs(segDx) > Math.abs(segDy) ? Math.abs(segDx) : Math.abs(segDy);
+        const steps = span < 1 ? 1 : Math.ceil(span);
+        const r = (d.color[0] * d.alpha) | 0;
+        const g = (d.color[1] * d.alpha) | 0;
+        const b = (d.color[2] * d.alpha) | 0;
+        for (let s = 1; s <= steps; s++) {
+          const t = s / steps;
+          const px = (prevX + segDx * t) | 0;
+          const py = (prevY + segDy * t) | 0;
+          if (px >= 0 && px < cols && py >= 0 && py < rows) {
+            const idx = (py * cols + px) * 4;
+            if (r > data[idx]) data[idx] = r;
+            if (g > data[idx + 1]) data[idx + 1] = g;
+            if (b > data[idx + 2]) data[idx + 2] = b;
+          }
+        }
+
         if (d.y >= rows) {
           d.y = -1;
           d.x = Math.floor(Math.random() * cols);
           d.color = pick();
           d.alpha = 0.2 + Math.random() * 0.4;
-        }
-
-        const px = d.x | 0;
-        const py = d.y | 0;
-        if (px >= 0 && px < cols && py >= 0 && py < rows) {
-          const idx = (py * cols + px) * 4;
-          const r = (d.color[0] * d.alpha) | 0;
-          const g = (d.color[1] * d.alpha) | 0;
-          const b = (d.color[2] * d.alpha) | 0;
-          if (r > data[idx]) data[idx] = r;
-          if (g > data[idx + 1]) data[idx + 1] = g;
-          if (b > data[idx + 2]) data[idx + 2] = b;
         }
       }
 
