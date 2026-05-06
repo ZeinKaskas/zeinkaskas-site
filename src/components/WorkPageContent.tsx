@@ -1,59 +1,21 @@
 "use client";
 
+import Link from "next/link";
 import Reveal from "./Reveal";
+import { posts } from "@/content/posts";
 
-const allProjects = [
-  {
-    img: "[Burjeel 8K video still]",
-    tag: "AI Video Production",
-    tagColor: "text-sky-blue",
-    title: "Burjeel Hospital",
-    desc: "8K cinematic video for a hospital's 20th anniversary. Full pipeline from script to final delivery.",
-    category: "featured",
-  },
-  {
-    img: "[PLAAY product render]",
-    tag: "AI Production",
-    tagColor: "text-magenta",
-    title: "PLAAY",
-    desc: "AI-generated product photography replacing traditional shoots for a premium chocolate brand.",
-    category: "featured",
-  },
-  {
-    img: "[Character consistency demo]",
-    tag: "AI Systems",
-    tagColor: "text-teal",
-    title: "Consistent Characters",
-    desc: "A generative workflow that maintains character consistency across multi-shot scenes, campaigns, and long-form content.",
-    category: "featured",
-  },
-  {
-    img: "[Workflow interface]",
-    tag: "Workflow",
-    tagColor: "text-teal",
-    title: "Brief to Content",
-    desc: "Upload a slide deck. Get production-ready visual content back automatically.",
-    category: "recent",
-  },
-  {
-    img: "[Ad pipeline output]",
-    tag: "AI Systems",
-    tagColor: "text-magenta",
-    title: "Replace Agency",
-    desc: "An automated pipeline that handles scripting, concepting, image generation, video, editing, and delivery.",
-    category: "recent",
-  },
-  {
-    img: "[TVC production still]",
-    tag: "AI Production",
-    tagColor: "text-sky-blue",
-    title: "TVCs Process",
-    desc: "From script to screen. A data-driven approach to TV commercial production using AI generation pipelines.",
-    category: "recent",
-  },
-];
+const accentText: Record<string, string> = {
+  "sky-blue": "text-sky-blue",
+  magenta: "text-magenta",
+  teal: "text-teal",
+  mango: "text-mango",
+  orange: "text-orange",
+};
 
 export default function WorkPageContent() {
+  const featured = posts.filter((p) => p.card.feature === "featured");
+  const recent = posts.filter((p) => p.card.feature === "recent");
+
   return (
     <section className="pt-28 md:pt-40 pb-16 md:pb-[100px] px-5 md:px-10 max-w-[1100px] mx-auto">
       <Reveal>
@@ -76,33 +38,89 @@ export default function WorkPageContent() {
         </p>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {allProjects.map((p, i) => (
-          <Reveal key={p.title} delay={i * 0.06}>
-            <div className="bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] rounded-[14px] overflow-hidden cursor-pointer hover:border-[rgba(255,255,255,0.14)] transition-[border-color] duration-300">
-              <div className="w-full aspect-video bg-[#111] flex items-center justify-center text-[11px] text-[rgba(255,255,255,0.12)] border-b border-[rgba(255,255,255,0.04)]">
-                {p.img}
-              </div>
-              <div className="p-5">
-                <div
-                  className={`text-[10px] uppercase tracking-[1.5px] mb-1.5 ${p.tagColor}`}
-                >
-                  {p.tag}
-                </div>
-                <h3
-                  className="text-lg font-semibold mb-1.5"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {p.title}
-                </h3>
-                <p className="text-[13px] text-[rgba(255,255,255,0.35)] font-light leading-[1.5]">
-                  {p.desc}
-                </p>
-              </div>
-            </div>
+      {featured.length > 0 && (
+        <>
+          <Reveal>
+            <span className="block text-[11px] uppercase tracking-[2.5px] text-[rgba(255,255,255,0.35)] mb-5">
+              Featured
+            </span>
           </Reveal>
-        ))}
-      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14 md:mb-16">
+            {featured.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 0.06}>
+                <Link
+                  href={`/work/${p.slug}`}
+                  className="group block bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] rounded-[14px] overflow-hidden hover:border-[rgba(255,255,255,0.14)] transition-[border-color] duration-300"
+                >
+                  <div className="w-full aspect-video bg-[#111] flex items-center justify-center text-[11px] text-[rgba(255,255,255,0.12)] border-b border-[rgba(255,255,255,0.04)]">
+                    {p.card.placeholder}
+                  </div>
+                  <div className="p-5">
+                    <div
+                      className={`text-[10px] uppercase tracking-[1.5px] mb-1.5 ${
+                        accentText[p.card.accent] ?? "text-white"
+                      }`}
+                    >
+                      {p.card.tag}
+                    </div>
+                    <h3
+                      className="text-lg font-semibold mb-1.5 group-hover:translate-x-0.5 transition-transform duration-300"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {p.card.title}
+                    </h3>
+                    <p className="text-[13px] text-[rgba(255,255,255,0.35)] font-light leading-[1.5]">
+                      {p.card.summary}
+                    </p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </>
+      )}
+
+      {recent.length > 0 && (
+        <>
+          <Reveal>
+            <span className="block text-[11px] uppercase tracking-[2.5px] text-[rgba(255,255,255,0.35)] mb-5">
+              Recent
+            </span>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {recent.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 0.06}>
+                <Link
+                  href={`/work/${p.slug}`}
+                  className="group block bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] rounded-[14px] overflow-hidden hover:border-[rgba(255,255,255,0.14)] transition-[border-color] duration-300"
+                >
+                  <div className="w-full aspect-video bg-[#111] flex items-center justify-center text-[11px] text-[rgba(255,255,255,0.12)] border-b border-[rgba(255,255,255,0.04)]">
+                    {p.card.placeholder}
+                  </div>
+                  <div className="p-5">
+                    <div
+                      className={`text-[10px] uppercase tracking-[1.5px] mb-1.5 ${
+                        accentText[p.card.accent] ?? "text-white"
+                      }`}
+                    >
+                      {p.card.tag}
+                    </div>
+                    <h3
+                      className="text-lg font-semibold mb-1.5 group-hover:translate-x-0.5 transition-transform duration-300"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {p.card.title}
+                    </h3>
+                    <p className="text-[13px] text-[rgba(255,255,255,0.35)] font-light leading-[1.5]">
+                      {p.card.summary}
+                    </p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </>
+      )}
     </section>
   );
 }
