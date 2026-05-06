@@ -67,6 +67,12 @@ export default function Navigation({ alwaysVisible = false }: NavigationProps) {
               >
                 About
               </Link>
+              <Link
+                href="/faq"
+                className="text-[rgba(255,255,255,0.45)] text-[13px] hover:text-white transition-colors"
+              >
+                FAQ
+              </Link>
             </div>
 
             <div className="flex items-center gap-3.5">
@@ -127,6 +133,13 @@ export default function Navigation({ alwaysVisible = false }: NavigationProps) {
               className="text-white text-2xl font-semibold"
             >
               About
+            </Link>
+            <Link
+              href="/faq"
+              onClick={() => setMobileOpen(false)}
+              className="text-white text-2xl font-semibold"
+            >
+              FAQ
             </Link>
             <Link
               href="/book"

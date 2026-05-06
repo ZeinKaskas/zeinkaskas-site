@@ -35,7 +35,7 @@ export default function Hero() {
 
       {/* VSL */}
       <div className="relative z-10 w-full max-w-[760px]">
-        <YouTubeEmbed videoId="HaAv2k9wG-g" title="Zein Kaskas — VSL" />
+        <YouTubeEmbed videoId="CFP6kjUM_E8" title="Zein Kaskas — VSL" />
       </div>
 
       {/* CTA */}

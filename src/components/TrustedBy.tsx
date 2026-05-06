@@ -21,6 +21,10 @@ const brands = [
   { name: "Ferrero Rocher", logo: "/logos/ferrero-rocher.png", w: 100 },
   { name: "Chevrolet", logo: "/logos/chevrolet.png", w: 120 },
   { name: "Homegrown Ventures", logo: "/logos/homegrown-ventures.png", w: 72 },
+  // TODO: source logo files for these two before going live.
+  // The brands are confirmed clients but logo assets are not in /public/logos/ yet.
+  // { name: "Quaker", logo: "/logos/quaker.png", w: 100 },
+  // { name: "Cheetos", logo: "/logos/cheetos.png", w: 110 },
 ];
 
 export default function TrustedBy() {

@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local asset staging (1.2 GB raw — re-export to WebP before deploy)
+/public/work-assets/

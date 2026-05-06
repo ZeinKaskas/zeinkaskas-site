@@ -28,14 +28,6 @@ const allProjects = [
     category: "featured",
   },
   {
-    img: "[Fashion editorial]",
-    tag: "Enterprise",
-    tagColor: "text-mango",
-    title: "Global Fashion House",
-    desc: "AI workflows turning product photos into editorial visuals across 20 brands. Built once, runs forever.",
-    category: "featured",
-  },
-  {
     img: "[Workflow interface]",
     tag: "Workflow",
     tagColor: "text-teal",
