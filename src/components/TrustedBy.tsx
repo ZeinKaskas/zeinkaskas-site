@@ -3,28 +3,30 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
 
-const brands = [
-  { name: "Samsung", logo: "/logos/samsung.png", w: 140 },
+type Brand = { name: string; logo: string; w: number };
+
+// Ordered most → least impressive. Edit this list to reshuffle the row.
+const brands: Brand[] = [
   { name: "Google", logo: "/logos/google.svg", w: 96 },
-  { name: "Figma", logo: "/logos/figma.svg", w: 96 },
-  { name: "Meena Health", logo: "/logos/meena.svg", w: 110 },
-  { name: "Burjeel Holdings", logo: "/logos/burjeel.png", w: 80 },
-  { name: "Mashreq Bank", logo: "/logos/mashreq.png", w: 160 },
-  { name: "Ministry of Defense KSA", logo: "/logos/mod-ksa.png", w: 80 },
-  { name: "Weavy", logo: "/logos/weavy.png", w: 110 },
-  { name: "Northern & Shell", logo: "/logos/northern-shell.png", w: 64 },
+  { name: "Samsung", logo: "/logos/samsung.png", w: 140 },
+  { name: "PepsiCo", logo: "/logos/pepsico.png", w: 170 },
+  { name: "Lay's", logo: "/logos/lays.png", w: 85 },
+  { name: "Doritos", logo: "/logos/doritos.png", w: 110 },
+  { name: "Cheetos", logo: "/logos/cheetos.png", w: 140 },
+  { name: "Quaker", logo: "/logos/quaker.png", w: 95 },
   { name: "Downy", logo: "/logos/downy.png", w: 72 },
+  { name: "Alpro", logo: "/logos/alpro.png", w: 80 },
+  { name: "Ministry of Defense KSA", logo: "/logos/mod-ksa.png", w: 80 },
+  { name: "Mashreq Bank", logo: "/logos/mashreq.png", w: 160 },
+  { name: "Burjeel Holdings", logo: "/logos/burjeel.png", w: 80 },
+  { name: "Figma", logo: "/logos/figma.svg", w: 130 },
+  { name: "Meena Health", logo: "/logos/meena.svg", w: 110 },
+  { name: "Northern & Shell", logo: "/logos/northern-shell.png", w: 64 },
+  { name: "Weavy", logo: "/logos/weavy.png", w: 110 },
   { name: "Afia", logo: "/logos/afia.png", w: 68 },
   { name: "PLAAY", logo: "/logos/plaay.png", w: 110 },
   { name: "Bambuyu", logo: "/logos/bambuyu.png", w: 120 },
-  { name: "Alpro", logo: "/logos/alpro.png", w: 80 },
-  { name: "Ferrero Rocher", logo: "/logos/ferrero-rocher.png", w: 100 },
-  { name: "Chevrolet", logo: "/logos/chevrolet.png", w: 120 },
   { name: "Homegrown Ventures", logo: "/logos/homegrown-ventures.png", w: 72 },
-  // TODO: source logo files for these two before going live.
-  // The brands are confirmed clients but logo assets are not in /public/logos/ yet.
-  // { name: "Quaker", logo: "/logos/quaker.png", w: 100 },
-  // { name: "Cheetos", logo: "/logos/cheetos.png", w: 110 },
 ];
 
 export default function TrustedBy() {

@@ -31,38 +31,24 @@ export default function AboutPageContent() {
 
       <div className="space-y-6">
         <Reveal delay={0.16}>
-          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.8] md:leading-[1.85]">
-            I&apos;m dyslexic. So when GPT-2 came out in high school, I was probably one
-            of the first people to actually use it for something real. I taught it to
-            write essays in my voice because I couldn&apos;t spell my way out of a
-            paragraph. Then I started messing around inside the OpenAI playground and
-            built myself a homework tool, back when most people had no idea the
-            playground even existed.
+          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.78)] font-normal leading-[1.8] md:leading-[1.85]">
+            I started in photography and filmmaking. Spent years behind a camera,
+            directing shoots, building visual stories for brands. Then AI changed
+            everything.
           </p>
         </Reveal>
 
         <Reveal delay={0.24}>
-          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.8] md:leading-[1.85]">
-            Went to film school after that. Dropped out partway through. Took
-            everything I&apos;d learned about story, framing, and editing, and rolled
-            it into AI video the moment Veo 2 became public. Veo 3 was the moment I
-            realised this was a real business, not just a creative habit.
+          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.78)] font-normal leading-[1.8] md:leading-[1.85]">
+            Not because it replaced what I did. Because it removed the limits. Ideas
+            that used to take a full production team and a six-figure budget? I could
+            build them in a week. Product shoots that needed a studio, models, and a
+            photographer? Done with AI, and often better.
           </p>
         </Reveal>
 
         <Reveal delay={0.32}>
-          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.8] md:leading-[1.85]">
-            Photography and filmmaking are where the craft sits. Years behind a
-            camera, directing shoots, building visual stories for brands. AI
-            didn&apos;t replace any of that. It removed the limits. Ideas that used to
-            take a full production team and a six-figure budget? I can build them in a
-            week. Product shoots that needed a studio, models, and a photographer?
-            Done with AI, and often better.
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.4}>
-          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.8] md:leading-[1.85]">
+          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.78)] font-normal leading-[1.8] md:leading-[1.85]">
             Now I help brands do the same. I work at the intersection of direction,
             design, and AI. I build systems that make teams faster and sharper without
             losing the human part. Every system or campaign I build is meant to be
@@ -70,8 +56,8 @@ export default function AboutPageContent() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.48}>
-          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.5)] font-light leading-[1.8] md:leading-[1.85]">
+        <Reveal delay={0.4}>
+          <p className="text-[15px] md:text-[17px] text-[rgba(255,255,255,0.78)] font-normal leading-[1.8] md:leading-[1.85]">
             I use AI as a collaborator, not a replacement. The taste, the creative
             direction, the decision-making? That still needs a person. AI handles
             everything else.
@@ -91,14 +77,14 @@ export default function AboutPageContent() {
           <div className="space-y-6">
             <div>
               <h3 className="text-[15px] font-semibold mb-1">AI Consulting</h3>
-              <p className="text-[14px] text-[rgba(255,255,255,0.4)] font-light leading-[1.7]">
+              <p className="text-[14px] text-[rgba(255,255,255,0.65)] font-normal leading-[1.7]">
                 I audit your creative workflow, identify where AI fits, build the
                 strategy, and train your team to run it independently.
               </p>
             </div>
             <div>
               <h3 className="text-[15px] font-semibold mb-1">AI Production</h3>
-              <p className="text-[14px] text-[rgba(255,255,255,0.4)] font-light leading-[1.7]">
+              <p className="text-[14px] text-[rgba(255,255,255,0.65)] font-normal leading-[1.7]">
                 Visuals, video, TVCs, and content at scale. From product renders
                 to broadcast-quality commercials. Built on pipelines, not one-offs.
               </p>
@@ -107,7 +93,7 @@ export default function AboutPageContent() {
               <h3 className="text-[15px] font-semibold mb-1">
                 AI Systems & Workflows
               </h3>
-              <p className="text-[14px] text-[rgba(255,255,255,0.4)] font-light leading-[1.7]">
+              <p className="text-[14px] text-[rgba(255,255,255,0.65)] font-normal leading-[1.7]">
                 Custom tools and integrations that automate the work your team
                 shouldn&apos;t be doing manually.
               </p>
@@ -130,7 +116,7 @@ export default function AboutPageContent() {
               href="https://instagram.com/ZeinKaskas"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[14px] text-[rgba(255,255,255,0.3)] hover:text-white transition-colors"
+              className="text-[14px] text-[rgba(255,255,255,0.6)] hover:text-white transition-colors"
             >
               Instagram
             </a>
@@ -138,7 +124,7 @@ export default function AboutPageContent() {
               href="https://www.linkedin.com/in/zein-kaskas-1371a0340/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[14px] text-[rgba(255,255,255,0.3)] hover:text-white transition-colors"
+              className="text-[14px] text-[rgba(255,255,255,0.6)] hover:text-white transition-colors"
             >
               LinkedIn
             </a>
@@ -146,13 +132,13 @@ export default function AboutPageContent() {
               href="https://www.youtube.com/@zeinkaskas4245"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[14px] text-[rgba(255,255,255,0.3)] hover:text-white transition-colors"
+              className="text-[14px] text-[rgba(255,255,255,0.6)] hover:text-white transition-colors"
             >
               YouTube
             </a>
             <a
               href="mailto:hello@zeinkaskas.com"
-              className="text-[14px] text-[rgba(255,255,255,0.3)] hover:text-white transition-colors"
+              className="text-[14px] text-[rgba(255,255,255,0.6)] hover:text-white transition-colors"
             >
               hello@zeinkaskas.com
             </a>

@@ -31,10 +31,10 @@ const faqs: FAQ[] = [
       "The longer version lives on the work pages. Each one walks through a different part of how we actually build things, so pick the one that maps to what you're making.",
     ],
     seeAlso: [
-      { label: "TVCs Process", href: "/work" },
-      { label: "Replace Agency", href: "/work" },
-      { label: "Brief to Content", href: "/work" },
-      { label: "Consistent Characters", href: "/work" },
+      { label: "TVCs Process", href: "/work/tvcs-process" },
+      { label: "Burjeel Hospital", href: "/work/burjeel-hospital" },
+      { label: "Meena", href: "/work/meena" },
+      { label: "PepsiCo", href: "/work/pepsico" },
     ],
   },
   {
