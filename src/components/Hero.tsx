@@ -14,7 +14,7 @@ export default function Hero() {
       <PixelRain />
 
       {/* Label */}
-      <span className="relative z-10 text-[10px] md:text-[11px] uppercase tracking-[2px] md:tracking-[3px] text-[rgba(255,255,255,0.25)] mb-5 md:mb-6 px-2">
+      <span className="relative z-10 text-[10px] md:text-[11px] uppercase tracking-[2px] md:tracking-[3px] text-[rgba(255,255,255,0.6)] mb-5 md:mb-6 px-2">
         AI Director & Creative Technologist
       </span>
 
@@ -46,7 +46,7 @@ export default function Hero() {
         >
           Book a 15-Minute Call
         </a>
-        <p className="text-[12px] text-[rgba(255,255,255,0.2)] mt-2.5">
+        <p className="text-[12px] text-[rgba(255,255,255,0.55)] mt-2.5">
           No pitch. Just clarity on where AI fits.
         </p>
       </div>

@@ -1,5 +1,5 @@
 import Navigation from "./Navigation";
-import CalendlyEmbed from "./CalendlyEmbed";
+import CalInline from "./CalInline";
 
 export default function BookPageContent() {
   return (
@@ -19,9 +19,11 @@ export default function BookPageContent() {
           </p>
         </div>
 
-        {/* Calendly inline embed */}
-        <div className="max-w-[700px] mx-auto px-3 md:px-4 pb-20">
-          <CalendlyEmbed url="https://calendly.com/zeinkaskas1/new-meeting" />
+        {/* Cal.com inline embed */}
+        <div className="max-w-[1000px] mx-auto px-3 md:px-4 pb-20">
+          <div className="h-[78vh] min-h-[620px]">
+            <CalInline />
+          </div>
         </div>
 
         <div className="text-center pb-16">

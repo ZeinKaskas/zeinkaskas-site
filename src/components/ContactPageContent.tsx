@@ -27,10 +27,15 @@ export default function ContactPageContent() {
         </p>
       </Reveal>
 
-      {/* Calendly placeholder */}
+      {/* Cal.com booking */}
       <Reveal delay={0.24}>
-        <div className="w-full max-w-[600px] aspect-[4/3] bg-[#111] rounded-[14px] border border-[rgba(255,255,255,0.06)] flex items-center justify-center text-sm text-[rgba(255,255,255,0.15)] mb-10">
-          [Calendly embed will go here]
+        <div className="mb-10">
+          <a
+            href="/book"
+            className="inline-block bg-white text-[#0A0A0A] px-8 py-3.5 rounded-lg text-[15px] font-semibold hover:opacity-90 transition-opacity"
+          >
+            Book a 15-Minute Call
+          </a>
         </div>
       </Reveal>
 
